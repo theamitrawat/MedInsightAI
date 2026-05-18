@@ -1,0 +1,81 @@
+# Secrets
+.env
+*.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Python cache and build output
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.pipenv/
+
+# Optional lock files from tools not used for deployment
+Pipfile.lock
+uv.lock
+
+# Runtime logs
+logs/
+
+# Local temporary files
+*.tmp
+*.bak
+test_out.txt
+git_status.txt
+out.txt
+model_dl.txt
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Large raw data files
+# Keep these local unless you intentionally want to publish the full dataset.
+data/*.pdf
+data/*.csv
+data/1_CancerGov_QA/
+data/2_GARD_QA/
+data/3_GHR_QA/
+data/4_MPlus_Health_Topics_QA/
+data/5_NIDDK_QA/
+data/6_NINDS_QA/
+data/7_SeniorHealth_QA/
+data/8_NHLBI_QA_XML/
+data/9_CDC_QA/
+data/10_MPlus_ADAM_QA/
+data/11_MPlusDrugs_QA/
+data/12_MPlusHerbsSupplements_QA/
+
+# Model cache
+# Commit the ONNX model files for Streamlit Cloud after running download_model.py.
+.model_cache/*.lock
+.model_cache/**/*.h5
+.model_cache/**/pytorch_model.bin
+.model_cache/**/flax_model*
+.model_cache/**/tf_model*
+.model_cache/**/rust_model*
+.model_cache/**/*.msgpack
+.model_cache/**/model_qint8_arm64.onnx
+.model_cache/**/model_qint8_avx512.onnx
+.model_cache/**/model_quint8_avx2.onnx
+.model_cache/**/model_O4.onnx
+
+# Vector store
+# Commit vectorstore/db_faiss for Streamlit Cloud after building it locally.
+# If GitHub size limits block the files, use Git LFS.

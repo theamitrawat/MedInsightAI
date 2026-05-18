@@ -1,0 +1,6 @@
+# Treat generated indexes and model files as binary files.
+vectorstore/db_faiss/*.faiss binary
+vectorstore/db_faiss/*.pkl binary
+.model_cache/**/*.onnx binary
+.model_cache/**/*.bin binary
+.model_cache/**/*.safetensors binary

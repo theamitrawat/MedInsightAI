@@ -48,7 +48,6 @@ MedInsightAI/
 |-- download_model.py          # downloads ONNX embedding files
 |-- requirements.txt
 |-- pyproject.toml
-|-- Pipfile
 |-- .env.example
 `-- README.md
 ```

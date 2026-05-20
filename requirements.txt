@@ -1,22 +1,28 @@
-# MedInsight AI runtime dependencies
-# Python 3.10+ (matches .python-version)
+# MedInsight AI — Streamlit Cloud dependencies
+# Python 3.11
 
-streamlit==1.46.1
+streamlit>=1.40.0
 
-# LangChain + Groq
-langchain-core==0.3.68
-langchain-community==0.3.27
-langchain-text-splitters==0.3.8
-langchain-groq==0.3.5
-groq==0.29.0
+# LangChain ecosystem — let pip resolve compatible versions together
+langchain-core>=0.3.0,<0.4.0
+langchain-community>=0.3.0,<0.4.0
+langchain-text-splitters>=0.3.0,<0.4.0
+langchain-groq>=0.2.0,<0.4.0
+groq>=0.9.0
 
-# Local retrieval and embeddings
-faiss-cpu>=1.7.4,<2.0.0
-onnxruntime>=1.16.0,<2.0.0
-tokenizers>=0.19.0,<1.0.0
+# Vector store
+faiss-cpu>=1.7.4
+
+# ONNX embeddings
+onnxruntime>=1.16.0
+tokenizers>=0.19.0
 numpy>=1.24.0,<2.0.0
-huggingface-hub>=0.23.0,<1.0.0
 
-# Data loading and local config
-pypdf==5.7.0
-python-dotenv==1.1.1
+# HuggingFace model download
+huggingface-hub>=0.23.0
+
+# PDF loading
+pypdf>=4.0.0
+
+# Env vars
+python-dotenv>=1.0.0

@@ -1,5 +1,5 @@
 # MedInsight AI runtime dependencies
-# Python 3.10 or 3.11 recommended
+# Python 3.10 through 3.12 supported
 
 streamlit==1.46.1
 
@@ -11,7 +11,7 @@ langchain-groq==0.3.5
 groq==0.29.0
 
 # Local retrieval and embeddings
-faiss-cpu==1.11.0
+faiss-cpu==1.11.0.post1
 onnxruntime==1.22.0
 tokenizers==0.21.2
 numpy==2.2.6

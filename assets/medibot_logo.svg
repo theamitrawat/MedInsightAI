@@ -1,0 +1,33 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="20" y1="18" x2="158" y2="166" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102B3A"/>
+      <stop offset="0.52" stop-color="#0E1117"/>
+      <stop offset="1" stop-color="#122A26"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="42" y1="26" x2="135" y2="153" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5CC8A7"/>
+      <stop offset="0.5" stop-color="#2E86AB"/>
+      <stop offset="1" stop-color="#7DD3FC"/>
+    </linearGradient>
+    <filter id="softShadow" x="18" y="16" width="144" height="150" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#020617" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="180" height="180" rx="40" fill="url(#bg)"/>
+  <circle cx="144" cy="38" r="20" fill="#2E86AB" opacity="0.22"/>
+  <circle cx="38" cy="140" r="28" fill="#5CC8A7" opacity="0.15"/>
+
+  <g filter="url(#softShadow)">
+    <path d="M90 22L136 39V77C136 111 116 139 90 153C64 139 44 111 44 77V39L90 22Z" fill="#0F172A" stroke="url(#shield)" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M70 77H82L89 57L101 116L110 82H122" stroke="#EAFBFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M62 62C62 49 72 41 84 46C87 47 89 49 90 51C91 49 93 47 96 46C108 41 118 49 118 62C118 78 100 90 90 98C80 90 62 78 62 62Z" fill="#5CC8A7" opacity="0.24"/>
+    <path d="M62 62C62 49 72 41 84 46C87 47 89 49 90 51C91 49 93 47 96 46C108 41 118 49 118 62" stroke="#5CC8A7" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="58" cy="82" r="5" fill="#7DD3FC"/>
+    <circle cx="126" cy="82" r="5" fill="#7DD3FC"/>
+  </g>
+
+  <path d="M62 132H118" stroke="#5CC8A7" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+  <path d="M76 145H104" stroke="#7DD3FC" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+</svg>

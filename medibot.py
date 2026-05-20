@@ -19,6 +19,7 @@ BASE_DIR = get_project_root()
 DB_FAISS_PATH = BASE_DIR / "vectorstore" / "db_faiss"
 LOG_DIR = BASE_DIR / "logs"
 QUERY_LOG_FILE = LOG_DIR / "queries.jsonl"
+LOGO_PATH = BASE_DIR / "assets" / "medibot_logo.svg"
 
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 GROQ_MODEL = "openai/gpt-oss-120b"
@@ -228,8 +229,20 @@ def initialize_session_state() -> None:
 
 def render_sidebar() -> None:
     with st.sidebar:
+        if LOGO_PATH.exists():
+            st.image(str(LOGO_PATH), width=96)
         st.title("MedInsight AI")
         st.caption("Medical RAG chatbot")
+        st.link_button(
+            "GitHub",
+            "https://github.com/theamitrawat",
+            use_container_width=True,
+        )
+        st.link_button(
+            "LinkedIn",
+            "https://www.linkedin.com/in/theamitrawat/",
+            use_container_width=True,
+        )
         st.divider()
 
         st.markdown("#### System Info")
@@ -419,13 +432,20 @@ def main() -> None:
     with tab_chat:
         st.markdown("## MedInsight AI")
         st.caption("Ask a medical question and get an answer grounded in the knowledge base.")
-        render_suggested_questions()
-        render_chat_history()
 
         pending_input = st.session_state.pop("pending_input", None)
-        user_input = st.chat_input("Ask a medical question...") or pending_input
+        if pending_input is None:
+            render_suggested_questions()
+
+        render_chat_history()
+
+        if pending_input:
+            answer_question(vectorstore, llm, pending_input)
+
+        user_input = st.chat_input("Ask a medical question...")
         if user_input:
-            answer_question(vectorstore, llm, user_input)
+            st.session_state["pending_input"] = user_input
+            st.rerun()
 
     with tab_about:
         render_about_tab()

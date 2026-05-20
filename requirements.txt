@@ -1,9 +1,8 @@
 # MedInsight AI — Streamlit Cloud dependencies
-# Python 3.11
+# Python 3.12 (Streamlit Cloud default)
+# Do NOT include streamlit here — Streamlit Cloud pre-installs it
 
-streamlit>=1.40.0
-
-# LangChain ecosystem — let pip resolve compatible versions together
+# LangChain ecosystem
 langchain-core>=0.3.0,<0.4.0
 langchain-community>=0.3.0,<0.4.0
 langchain-text-splitters>=0.3.0,<0.4.0

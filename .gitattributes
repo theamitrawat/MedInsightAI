@@ -4,3 +4,4 @@ vectorstore/db_faiss/*.pkl binary
 .model_cache/**/*.onnx binary
 .model_cache/**/*.bin binary
 .model_cache/**/*.safetensors binary
+vectorstore/db_faiss/index.faiss filter=lfs diff=lfs merge=lfs -text

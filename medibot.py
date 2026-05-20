@@ -113,7 +113,7 @@ def get_llm():
 
     return ChatGroq(
         model=GROQ_MODEL,
-        temperature=0.2,
+        temperature=0.0,  # deterministic output
         groq_api_key=groq_api_key,
         streaming=True,
     )
@@ -121,8 +121,8 @@ def get_llm():
 
 def retrieve_with_scores(vectorstore, query: str, k: int = TOP_K):
     retriever = vectorstore.as_retriever(
-        search_type="mmr",
-        search_kwargs={"k": k, "fetch_k": k * 3, "lambda_mult": 0.7},
+        search_type="similarity",  # deterministic retrieval
+        search_kwargs={"k": k},
     )
     docs = retriever.invoke(query)
     scored_docs = vectorstore.similarity_search_with_relevance_scores(query, k=k)

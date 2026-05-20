@@ -8,6 +8,10 @@ answer with source snippets.
 This project is for learning and portfolio use only. It is not a medical device
 and must not be used for diagnosis, treatment decisions, or emergency advice.
 
+## Live Demo
+
+[Try MedInsight AI on Streamlit](https://medinsightai-theamitrwt.streamlit.app/)
+
 ## Features
 
 - Streamlit chat interface
